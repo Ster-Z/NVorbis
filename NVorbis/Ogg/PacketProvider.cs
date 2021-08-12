@@ -123,7 +123,7 @@ namespace NVorbis.Ogg
                     throw new System.IO.InvalidDataException("Could not find end of continuation!");
                 }
                 var granules = getPacketGranuleCount(packet, isFirst);
-                if (startGP + granules > granulePos)
+                if (startGP + granules >= granulePos)
                 {
                     granulePos = startGP;
                     return packetIndex;
